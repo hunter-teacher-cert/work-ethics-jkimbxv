@@ -1,6 +1,6 @@
-* Last name:Kim 
-* First name:Jiyoon
-* Github username:jkim3551
+* Last name: Kim 
+* First name: Jiyoon
+* Github username:jkim3551 
 
 * Instructions:
 
@@ -14,5 +14,6 @@ their respective folders. Group work should be added to all members
 repositories.
 
 
+done
 
 
