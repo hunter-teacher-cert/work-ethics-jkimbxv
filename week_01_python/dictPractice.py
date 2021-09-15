@@ -1,15 +1,36 @@
 #For dictionaries you can write a program that reads a file and uses a
 #dictionary to count the number of times each word appears.
+#reading in a txt file
 f = open("demofile.txt","r") #f is a string of the text file inserted
-
+f = f.read()
 fileWords = {}
 
-#write a function that detects next words by using spaces.
+#detects next words by using spaces.
+def findNextWord(text,startLook): #returns index of end of word
+    iStart = startLook;
+    if (text[startLook] == " "):
+        iStart+=1;
+    i = iStart;
+    while (text[i] != " " and text[i] != "."):
+        i+=1
+    return i;
 
-#go through and check that word is unique, loop
+#detects if word is repeated
+def isItRepeated(hash,word):
+    for tableVal in hash:
+        if tableVal == word:
+            return True;
+    return False;
+
 
 #go through document and detect next word
-#check if appeared before. if not
-#add next word to dictionary by using syntax shown
-#fileWords[wordFromF] = 1
-#if old word, incremenent value by 1. 
+iCurr = 0;
+while (iCurr < len(f)):
+    iEnd = findNextWord(f,iCurr)
+    newWord = f[iCurr:iEnd]
+    if (isItRepeated(fileWords,newWord)):
+        fileWords[newWord] = fileWords[newWord]+1;
+    else:
+        fileWords[newWord] = 1;
+    iCurr = iEnd+1;
+print(fileWords)
