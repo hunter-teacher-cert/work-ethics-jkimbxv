@@ -8,7 +8,6 @@ def printBoard(board):
             print(item+"|",end = '')
         print()
 
-
 def setCell(board, r, c, val):
     board[r][c] = val;
 
@@ -59,8 +58,8 @@ def generateNextBoard(board):
     c = 0;
     while r<len(board):
         while c<len(board[0]):
-            nextBoard[r][c] = getNextGenCell(board,r,c);
-            c+=1;
+            nextBoard[r][c] = getNextGenCell(board,r,c)
+            c+=1
         r+=1;
     return nextBoard;
 
@@ -70,6 +69,5 @@ setCell(newBoard,1,1,'X')
 setCell(newBoard,0,2,'X')
 setCell(newBoard,0,3,'X')
 printBoard(newBoard)
-print(getNextGenCell(newBoard,1,2))
 print("------------------")
 printBoard(generateNextBoard(newBoard))
