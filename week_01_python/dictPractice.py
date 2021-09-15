@@ -23,7 +23,8 @@ def isItRepeated(hash,word):
     return False;
 
 
-#go through document and detect next word
+#main part here
+#goes thru file and finds next word, adds it to dictionary
 iCurr = 0;
 while (iCurr < len(f)):
     iEnd = findNextWord(f,iCurr)
