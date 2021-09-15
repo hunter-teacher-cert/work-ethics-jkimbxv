@@ -36,8 +36,8 @@ def countNeighbors(board, r, c):
         startRow = r-1;
         endRow = r+1;
     #non edge cases
-    for row in board[startRow:endRow]:
-        for space in row[startCol:endCol]:
+    for row in board[startRow:endRow+1]:
+        for space in row[startCol:endCol+1]:
             if space=="X":
                 numNeighbors+=1;
     return numNeighbors
@@ -57,9 +57,9 @@ def generateNextBoard(board):
     nextBoard=createNewBoard(len(board),len(board[0]));
     r = 0;
     c = 0;
-    while r < len(board):
-        while c < len(board[0]):
-            board[r][c] = getNextGenCell(board,r,c);
+    while r<len(board):
+        while c<len(board[0]):
+            nextBoard[r][c] = getNextGenCell(board,r,c);
             c+=1;
         r+=1;
     return nextBoard;
@@ -69,7 +69,7 @@ newBoard = createNewBoard(4,4)
 setCell(newBoard,1,1,'X')
 setCell(newBoard,0,2,'X')
 setCell(newBoard,0,3,'X')
-print(countNeighbors(newBoard,1,2));
 printBoard(newBoard)
+print(getNextGenCell(newBoard,1,2))
 print("------------------")
 printBoard(generateNextBoard(newBoard))
