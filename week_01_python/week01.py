@@ -3,10 +3,7 @@
 #just check with me.
 #The game of life program (without the animation)
 #covers most of the array/list concepts
-#you'll want to be comfortable with in this class so that
-#would be a good end goal for everything but dictionaries.
-#For dictionaries you can write a program that reads a file and uses a
-#dictionary to count the number of times each word appears.
+
 
 import java.io.*;
 import java.util.*;
