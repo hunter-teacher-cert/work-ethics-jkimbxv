@@ -1,6 +1,7 @@
 import random
 
-
+##I apologize in advance. I still only have a big picture idea of what's happening
+#in this code. 
 def create_plane(rows,cols):
     """
 
@@ -214,12 +215,10 @@ def fill_plane(plane):
     # seats to the economy plus passengers
     # you will have to complete the seat_economy function
     # Alternatively you can rewrite this section
-    
+
     for name in economy_sold.keys():
         for i in range(economy_sold[name]):
             plane = seat_economy(plane,economy_sold,name)
-
-
     return plane
 
 
