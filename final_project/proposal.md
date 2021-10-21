@@ -3,7 +3,7 @@
 ## Right to Repair Ethical Dilemma
 * e-waste is harmful; can be solved by right to repair
 * comparison of recycling systems
-* more profitable to replace rather than Repair
+* more profitable for manufacturer to replace rather than Repair
 * consumer point of view: wasteful for resources and money
 * litigation/lobbyists for right to Repair
 * compare phone repairs with car repairs
