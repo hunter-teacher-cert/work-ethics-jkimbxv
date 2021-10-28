@@ -1,14 +1,13 @@
 import re
 
-
+#assumes name is first letter capitalized of first name and last name
 def find_date(line):
-    pattern = r"[A-Z]?[a-z]{1,20},? ?[A-Z]?[a-z]{1,20}"
+    pattern = r"[A-Z][a-z]{1,10} [A-Z][a-z]{1,10}"
     result = re.findall(pattern,line)
+    newPattern = r"[A-Z][a-z]{1,10},? ?[A-Z][a-z]{1,10}"
+    result = result + re.findall(newPattern,line)
     return result
 
-
-#result = find_date("10/15/2023 is a October 13, 2025 date as is 1/23/19")
-#print(result)
 
 f = open("namefile.dat")
 for line in f.readlines():
