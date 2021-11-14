@@ -1,136 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
-    <title>Repairability</title>
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap');
-body{
-  font-family: 'Bitter', serif;
-}
-</style>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <title>Repairability</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap');
 
-    </head>
-    <center>
+    body {
+      font-family: 'Bitter', serif;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap" rel="stylesheet">
+</head>
+<center>
+
   <body>
     <p style="font-size:100px">Repairability</p>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="co2.html">Environmental Impact</a></li>
+      <li><a href="repairCost.html">Repair Cost</a></li>
+    </ul>
     <br>
     <h1>Fill out this form with information regarding the repairability of your smart phone</h1>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeYzdeHEu4cXXwRJJ6kYjkyIW4m6Pd4lgqqTAXGRfI9_u3P1Q/viewform?embedded=true" width="700" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-  <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTyqZYwhXBS4ZNDeDn3yYd_gkPyk0TU4B8-LiIiMkymoyWKhWXf1RWsGVV9hEONQBfr8UP0JWBi4nnG/pubchart?oid=1097306538&amp;format=interactive"></iframe>
-<br><br>
-<br><br>
-<br><br>
-<h1>You might want to consider 2 things as you consider purchasing a new phone.</h1>
-<br><br>
-<h1>How much would it cost to get something repaired?</h1>
-Data from <a href="https://swappa.com/repair/phone-repair-calculator">Swappa</a>
-<br><br>
-Which phone do you have?
-<select id="phonePicker" name="">
-  <option value="iphone12">iPhone 12</option>
-  <option value="iphone12pro">iPhone 12 Pro</option>
-  <option value="iphone11">iPhone 11</option>
-  <option value="iphone11pro">iPhone 11 Pro</option>
-  <option value="samsungs20">Samsung S20</option>
-  <option value="samsungs21">Samsung S21</option>
-  <option value="pixel4a">Pixel 4a</option>
-  <option value="pixel5">Pixel 5</option>
-</select>
-<br><br>
-What do you need repaired?
-<select id="repairPicker" name="">
-  <option value="screen">screen repair</option>
-  <option value="battery">battery repair</option>
-</select>
-<button type="button" name="button" onclick="calculate()">Calculate!</button>
-<br><br>
-Your repair will cost...<p id="repairCost"></p>
-<br><br>
-<h1>How much does using your smartphone contribute to global emissions?</h1>
-Each phone has a harmful impact on our planet.
-How much do you contribute to that?
-<br><br>
-<label for="">Age: </label>
-<input type="number" id="age" value="">
-<select id="userType">
-  <option value="1">upgrade every year</option>
-  <option value="2">upgrade every other year</option>
-  <option value="3">upgrade rarely</option>
-</select>
-You will contribute approximately
-<p id="co2"></p>
-tons of CO2 in your lifetime.
-For context, that's equivalent to...
-<p id="equivalent"></p>
-years of CO2 emissions from a standard car.
-<button type="button" name="button" onclick="CO2()">How much CO2</button>
-<script type="text/javascript">
-function calculate(){
-  var cost = 0;
-  var phone = document.getElementById('phonePicker').value;
-  var repair = document.getElementById('repairPicker').value;
-  if (phone=="iphone12"||phone=="iphone12pro"){
-    if (repair=="screen")
-    cost = 295;
-    else//battery repair
-    cost = 115;
-  }else if (phone=="iphone11"){
-    if (repair=="screen")
-    cost = 148;
-    else//battery repair
-    cost = 86;
-  }else if (phone=="iphone11pro"){
-    if(repair=="screen")
-    cost = 241;
-    else//battery repair
-    cost = 111;
-  }else if (phone == "samsungs20"){
-    if(repair=="screen")
-    cost = 249
-    else//battery repair
-    cost = 90;
-  }else if (phone == "samsungs21"){
-    if(repair=="screen")
-    cost = 199;
-    else//battery repair
-    cost = "unknown";
-  }else if (phone == "pixel4a"){
-    if(repair=="screen")
-    cost = 204
-    else//battery repair
-    cost = 33;
-  }else if (phone == "pixel5"){
-    if(repair=="screen")
-    cost = 254
-    else//battery repair
-    cost = "unknown";
-  }else {
-    cost = 'error'
-  }
-  document.getElementById('repairCost').innerHTML = cost;
-}
-function CO2(){
-  //uses information from https://reboxed.co/blogs/outsidethebox/the-carbon-footprint-of-your-phone-and-how-you-can-reduce-it
-  //7.7 billion phones with 580 million tonnes of CO2 emissions
-  //0.0753 tonnes of CO2 per phones
-
-  //estimates how many phones the user will use in their life time
-  var age = document.getElementById("age").value;
-  var userType = document.getElementById("userType").value;
-
-  //uses average life span of 80
-  var result = (80-age)/userType * 0.0753;
-  document.getElementById("co2").innerHTML = result.toFixed(3);
-  document.getElementById("equivalent").innerHTML = (result/4.6).toFixed(3);
-}
-</script>
-<br><br>
-<br><br>
+    <iframe width="600" height="371" seamless frameborder="0" scrolling="no"
+      src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTyqZYwhXBS4ZNDeDn3yYd_gkPyk0TU4B8-LiIiMkymoyWKhWXf1RWsGVV9hEONQBfr8UP0JWBi4nnG/pubchart?oid=1097306538&amp;format=interactive"></iframe>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
 
   </body>
 </center>
+
 </html>

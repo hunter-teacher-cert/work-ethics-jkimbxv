@@ -1,0 +1,57 @@
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap');
+
+    body {
+      font-family: 'Bitter', serif;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap" rel="stylesheet">
+</head>
+<center>
+
+  <body>
+    <p style="font-size:100px">Repairability</p>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="co2.html">Environmental Impact</a></li>
+      <li><a href="repairCost.html">Repair Cost</a></li>
+    </ul>
+
+    <h1>How much does using your smartphone contribute to global emissions?</h1>
+    Each phone has a harmful impact on our planet.
+    How much do you contribute to that?
+    <br><br>
+    <label for="">Age: </label>
+    <input type="number" id="age" value="">
+    <select id="userType">
+      <option value="1">upgrade every year</option>
+      <option value="2">upgrade every other year</option>
+      <option value="3">upgrade rarely</option>
+    </select>
+    You will contribute approximately
+    <p id="co2"></p>
+    tons of CO2 in your lifetime.
+    For context, that's equivalent to...
+    <p id="equivalent"></p>
+    years of CO2 emissions from a standard car.
+    <button type="button" name="button" onclick="CO2()">How much CO2</button>
+    <script type="text/javascript">
+      function CO2() {
+        //uses information from https://reboxed.co/blogs/outsidethebox/the-carbon-footprint-of-your-phone-and-how-you-can-reduce-it
+        //7.7 billion phones with 580 million tonnes of CO2 emissions
+        //0.0753 tonnes of CO2 per phones
+
+        //estimates how many phones the user will use in their life time
+        var age = document.getElementById("age").value;
+        var userType = document.getElementById("userType").value;
+
+        //uses average life span of 80
+        var result = (80 - age) / userType * 0.0753;
+        document.getElementById("co2").innerHTML = result.toFixed(3);
+        document.getElementById("equivalent").innerHTML = (result / 4.6).toFixed(3);
+      }
+
+    </script>
+    </body>

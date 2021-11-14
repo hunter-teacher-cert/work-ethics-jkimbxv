@@ -1,0 +1,92 @@
+<head>
+  <meta charset="utf-8">
+  <title>Repairability</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap');
+body{
+font-family: 'Bitter', serif;
+}
+</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <center>
+<body>
+  <p style="font-size:100px">Repairability</p>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="co2.html">Environmental Impact</a></li>
+<li><a href="repairCost.html">Repair Cost</a></li>
+</ul>
+<h1>How much would it cost to get something repaired?</h1>
+Data from <a href="https://swappa.com/repair/phone-repair-calculator">Swappa</a>
+<br><br>
+Which phone do you have?
+<select id="phonePicker" name="">
+  <option value="iphone12">iPhone 12</option>
+  <option value="iphone12pro">iPhone 12 Pro</option>
+  <option value="iphone11">iPhone 11</option>
+  <option value="iphone11pro">iPhone 11 Pro</option>
+  <option value="samsungs20">Samsung S20</option>
+  <option value="samsungs21">Samsung S21</option>
+  <option value="pixel4a">Pixel 4a</option>
+  <option value="pixel5">Pixel 5</option>
+</select>
+<br><br>
+What do you need repaired?
+<select id="repairPicker" name="">
+  <option value="screen">screen repair</option>
+  <option value="battery">battery repair</option>
+</select>
+<button type="button" name="button" onclick="calculate()">Calculate!</button>
+<br><br>
+Your repair will cost...<p id="repairCost"></p>
+<br><br>
+
+    <script type="text/javascript">
+      function calculate() {
+        var cost = 0;
+        var phone = document.getElementById('phonePicker').value;
+        var repair = document.getElementById('repairPicker').value;
+        if (phone == "iphone12" || phone == "iphone12pro") {
+          if (repair == "screen")
+            cost = 295;
+          else //battery repair
+            cost = 115;
+        } else if (phone == "iphone11") {
+          if (repair == "screen")
+            cost = 148;
+          else //battery repair
+            cost = 86;
+        } else if (phone == "iphone11pro") {
+          if (repair == "screen")
+            cost = 241;
+          else //battery repair
+            cost = 111;
+        } else if (phone == "samsungs20") {
+          if (repair == "screen")
+            cost = 249
+          else //battery repair
+            cost = 90;
+        } else if (phone == "samsungs21") {
+          if (repair == "screen")
+            cost = 199;
+          else //battery repair
+            cost = "unknown";
+        } else if (phone == "pixel4a") {
+          if (repair == "screen")
+            cost = 204
+          else //battery repair
+            cost = 33;
+        } else if (phone == "pixel5") {
+          if (repair == "screen")
+            cost = 254
+          else //battery repair
+            cost = "unknown";
+        } else {
+          cost = 'error'
+        }
+        document.getElementById('repairCost').innerHTML = cost;
+      }
+    </script>
+</body>
